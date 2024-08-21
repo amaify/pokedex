@@ -1,0 +1,57 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "tab",
+    "indentWidth": 2,
+    "lineWidth": 120
+  },
+  "javascript": {
+    "formatter": {
+      "trailingCommas": "none",
+      "bracketSpacing": true,
+      "quoteProperties": "asNeeded",
+      "bracketSameLine": false
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
+  },
+  "organizeImports": { "enabled": true },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "a11y": {
+        "noBlankTarget": "error",
+        "noRedundantAlt": "warn",
+        "noRedundantRoles": "warn"
+      },
+      "correctness": {
+        "noChildrenProp": "error",
+        "noUnusedVariables": "error",
+        "useExhaustiveDependencies": "off",
+        "useHookAtTopLevel": "error",
+        "noUnusedImports": "error",
+        "useJsxKeyInIterable": "error"
+      },
+      "security": { "noDangerouslySetInnerHtmlWithChildren": "error" },
+      "suspicious": {
+        "noConsoleLog": "error",
+        "noDuplicateJsxProps": "error",
+        "noDoubleEquals": "error",
+        "noCommentText": "warn",
+        "noSparseArray": "error",
+        "noImplicitAnyLet": "error"
+      },
+      "style": {
+        "noUselessElse": "warn",
+        "noVar": "warn",
+        "useConst": "error",
+        "useImportType": "error"
+      }
+    }
+  }
+}
