@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { type PokemonType, pokemonTypeColour } from "../PokemonColourMap";
 import useGetPokemon from "../hooks/useGetPokemon";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
+import BackToTopButton from "./BackToTopButton";
 import Modal from "./Modal";
 import PokemonSearch from "./PokemonSearch";
 import Skeleton from "./Skeleton";
@@ -10,8 +11,8 @@ import Skeleton from "./Skeleton";
 export default function Layout() {
 	const { data, isLoading, error, hasNextPage, isFetchingNextPage, fetchNextPage } = useGetPokemon();
 	const { observerElement } = useIntersectionObserver({ hasNextPage, fetchNextPage, options: { threshold: 1 } });
-
 	const [params, setSearchParams] = useSearchParams();
+
 	const searchParams = params.get("search") ?? "";
 
 	if (isLoading) return <LoadingPokemon numberOfItems={15} />;
@@ -54,6 +55,7 @@ export default function Layout() {
 								</div>
 							) : null;
 						})}
+						<BackToTopButton />
 					</div>
 					<div ref={observerElement} />
 					{isFetchingNextPage && <LoadingPokemon numberOfItems={5} />}
